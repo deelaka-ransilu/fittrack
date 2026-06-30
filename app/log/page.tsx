@@ -75,7 +75,7 @@ export default function LogPage() {
   const updateSet = (exIdx: number, setIdx: number, field: string, value: unknown) => {
     setLog((prev) => {
       const next = JSON.parse(JSON.stringify(prev)) as DailyLog;
-      const s = next.gym.exercises[exIdx].sets[setIdx] as Record<string, unknown>;
+      const s = next.gym.exercises[exIdx].sets[setIdx] as unknown as Record<string, unknown>;
       s[field] = value;
       return next;
     });
